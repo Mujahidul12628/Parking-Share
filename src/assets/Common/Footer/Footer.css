@@ -1,0 +1,55 @@
+.footer-bg {
+    background: linear-gradient(180deg, #08c2da 0%, #046974 90%);
+    background-image: linear-gradient(180deg, #08c2da, #03626d);
+}
+
+.counter-bg {
+    background-image: linear-gradient(180deg, rgb(88, 226, 244), rgb(9, 181, 200));
+
+}
+
+.footer-text {
+    max-width: 200px;
+    text-align: justify;
+}
+
+#footer-email {
+    background-color: transparent;
+    border: 2px solid #08c2da;
+    padding: 2px;
+    max-width: max-content;
+}
+
+#footer-submit {
+    background: linear-gradient(180deg, #00b5cd 0%, #02AABD 90%);
+    border: 2px solid #00b5cd;
+    padding: 2px;
+}
+
+#footer-submit:hover {
+    background-color: #2be6ff;
+    border: 2px solid #b4f6ff;
+    font-weight: 500;
+    padding: 2px;
+}
+
+@media (max-width: 475px) {
+    #footer-email {
+
+        border: 2px solid #2be6ff;
+        padding: 2px;
+        max-width: 50px;
+    }
+}
+
+@media (min-width: 476px) and (max-width: 1024px) {
+    #footer-email {
+        max-width: 120px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #footer-email {
+        max-width: max-content;
+    }
+}
