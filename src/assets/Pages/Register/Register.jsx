@@ -151,7 +151,7 @@
 //                             <input type="text" name="photoURL" placeholder="Photo URL" className="input input-bordered" required />
 //                         </div>
 //                         <div className="mt-6 form-control">
-//                             <button className="bg-cyan-500 btn text-white font-semibold">Register</button>
+//                             <button className="bg-blue-500 btn text-white font-semibold">Register</button>
 //                         </div>
 //                         <div className='mx-auto mt-3'><span>Already Have Account? </span><Link to="/login" className='text-blue-500'>Login</Link></div>
 
