@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <div className=''>
-            <div className="w-full mx-auto shadow-lg bg-cyan-500 navbar max-w-7xl font-julius">
+            <div className="w-full mx-auto shadow-lg navBg navbar max-w-7xl font-julius">
 
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -33,8 +33,7 @@ const Navbar = () => {
                         <ul tabIndex={0} className="p-2 mt-3 bg-white shadow menu menu-compact dropdown-content rounded-box w-52">
                             <li className=''><NavLink to="/">Home</NavLink></li>
                             {user && <>
-                                <li><NavLink to="/class" >Class</NavLink></li>
-                                <li><NavLink to="/instructor" >Instructor</NavLink></li>
+
                                 <li><NavLink to="/dashboard" >Dashboard</NavLink></li>
                             </>}
                             {/* <li><NavLink to="/blogs">Blogs</NavLink></li> */}
@@ -42,7 +41,8 @@ const Navbar = () => {
                     </div>
 
                     <div className='inline-flex items-center'>
-                        <img src={logo} className='w-24 ml-2 md:w-3/12' alt="" />
+                        {/* <img src={logo} className='w-24 ml-2 md:w-3/12' alt="" /> */}
+                        <p className='text-2xl font-semibold text-white tex-white'> Share Parking</p>
                     </div>
 
                 </div>
@@ -52,8 +52,7 @@ const Navbar = () => {
                         <li><NavLink to="/">Home</NavLink></li>
 
                         {user && <>
-                            <li><NavLink to="/class">Class</NavLink></li>
-                            <li><NavLink to="/instructor" >Instructor</NavLink></li>
+
                             <li><NavLink to="/dashboard" >Dashboard</NavLink></li></>}
                         {/* <li><NavLink to="/blogs">Blogs</NavLink></li> */}
                     </ul>
@@ -64,7 +63,7 @@ const Navbar = () => {
                         <div className='inline-flex items-center gap-2'>
 
                             <label tabIndex={0} className=" avatar">
-                                <div className="w-10 rounded-full bg-cyan-600 ">
+                                <div className="w-10 rounded-full bg-slate-600 ">
                                     <img
                                         src={user.photoURL || 'https://i.ibb.co/Qv83f2q/3177440.png'}
                                         className="w-10 h-10 rounded-full"
@@ -77,14 +76,14 @@ const Navbar = () => {
 
                             <Link to="/">
 
-                                <button onClick={handleLogOut} className="px-3 py-2 font-semibold text-white rounded-full bg-cyan-800">Log out</button>
+                                <button onClick={handleLogOut} className="px-3 py-2 font-semibold text-white rounded-full bg-slate-700">Log out</button>
 
                             </Link>
                         </div>
                         :
                         <Link to="/login">
 
-                            <button className="px-3 py-2 font-semibold text-white rounded-full bg-cyan-800">Login</button>
+                            <button className="px-3 py-2 font-semibold text-white rounded-full bg-slate-700">Login</button>
 
                         </Link>}
                 </div>

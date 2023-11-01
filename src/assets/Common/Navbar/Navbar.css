@@ -10,6 +10,12 @@ a.active {
 
 .menu a {
     border-radius: 5px !important;
+    color: white;
+}
+
+.navBg {
+    background: rgb(34, 128, 220);
+    background: linear-gradient(180deg, rgba(34, 128, 220, 1) 0%, rgba(113, 84, 218, 1) 100%);
 }
 
 .shadowAll {
