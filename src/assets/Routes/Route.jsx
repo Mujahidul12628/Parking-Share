@@ -12,12 +12,13 @@ import MainLayout from "../Common/MainLayout/MainLayout";
 import Home from "../Pages/Home/Home";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
-import Class from "../Pages/Class/Class";
-import ClassDetails from "../Pages/Class/ClassDetails";
-import Instructor from "../Pages/Instructor/Instructor";
-import InstructorDetails from "../Pages/Instructor/InstructorDetails";
-import Blog from "../Pages/Blog/Blog";
+
 import Payment from "../Pages/Payment/Payment";
+import UpdateParkingSpacee from "../Pages/UpdateParkingSpace/UpdateParkingSpacee";
+import ShowParkingCard from "../Pages/AddParkingSpace/ShowParkingCard";
+import AddParking from "../Pages/AddParkingSpace/AddParking";
+import SingleParkingCardDetails from "../Pages/SigngleParkingCardDetails/SingleParkingCardDetails";
+
 
 
 const router = createBrowserRouter([
@@ -28,7 +29,8 @@ const router = createBrowserRouter([
 
             {
                 path: "/",
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:5008/parking')
             },
             {
                 path: "login",
@@ -38,35 +40,27 @@ const router = createBrowserRouter([
                 path: "register",
                 element: <Register></Register>
             },
-
-            {
-                path: "/class",
-                element: <PrivateRoute> <Class></Class> </PrivateRoute>
-            },
-            {
-                path: '/class/:id',
-                element: <PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>
-            },
-
-
-
-            {
-                path: "/instructor",
-                element: <PrivateRoute><Instructor></Instructor></PrivateRoute>
-            },
-            {
-                path: '/instructor/:id',
-                element: <PrivateRoute><InstructorDetails></InstructorDetails></PrivateRoute>
-            },
             {
                 path: '/payment',
                 element: <PrivateRoute><Payment></Payment></PrivateRoute>
             },
 
             {
-                path: "blogs",
-                element: <Blog></Blog>
+                path: 'addparking',
+                element: <PrivateRoute><AddParking></AddParking> </PrivateRoute>
             },
+            {
+                path: '/details',
+                element: <PrivateRoute> <SingleParkingCardDetails></SingleParkingCardDetails> </PrivateRoute>,
+
+            },
+            {
+                path: 'updateparking/:id',
+                element: <PrivateRoute><UpdateParkingSpacee></UpdateParkingSpacee></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5008/parking/${params.id}`)
+            },
+
+
             // {
             //     path: "all-toys",
             //     element: <AllToys></AllToys>,
