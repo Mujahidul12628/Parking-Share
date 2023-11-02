@@ -13,6 +13,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import AddTraining from './AddTraining';
 import ManageTraining from './ManageTraining';
+import AddParking from '../AddParkingSpace/AddParking';
 
 const Dashboard = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -74,7 +75,7 @@ const Dashboard = () => {
                     onClick={handleToggleSidebar}
                     aria-label="Toggle Sidebar"
                 >
-                    {isSidebarOpen ? <FaChevronLeft className='w-6 h-6 my-3 text-cyan-900' /> : <FaChevronRight className='w-6 h-6 my-3 text-cyan-900' />}
+                    {isSidebarOpen ? <FaChevronLeft className='w-6 h-6 my-3 text-blue-900' /> : <FaChevronRight className='w-6 h-6 my-3 text-blue-900' />}
                 </button>
             </div>
 
@@ -97,7 +98,7 @@ const Dashboard = () => {
                         <div
                             key={item}
                             className={`p-1 mb-2 sm:py-2 sm:px-2 sm:mb-4 rounded cursor-pointer ${selectedSection === item
-                                ? 'bg-cyan-500 text-white'
+                                ? 'bg-blue-500 text-white'
                                 : 'hover:bg-slate-300'
                                 }`}
                             onClick={() => handleSectionClick(item)}
@@ -135,7 +136,7 @@ const Dashboard = () => {
                     {/* Your content based on the selected section */}
                     {selectedSection === 'addTraining' && (
                         <>
-                            <AddTraining></AddTraining>
+                            <AddParking></AddParking>
                         </>
                     )}
                     {selectedSection === 'manageTraining' && (
@@ -157,7 +158,7 @@ const Dashboard = () => {
                         (
                             <>
                                 <Link to="/">
-                                    <button className="px-3 py-2 m-3 font-semibold text-white rounded-full bg-cyan-500">Go to home</button>
+                                    <button className="px-3 py-2 m-3 font-semibold text-white rounded-full bg-blue-500">Go to home</button>
                                 </Link>
                             </>
 
@@ -165,7 +166,7 @@ const Dashboard = () => {
                     {selectedSection === 'logout' && (
                         <>
                             {/* <Link to="/">
-                                <button onClick={handleLogOut} className="px-3 py-2 font-semibold text-white rounded-full bg-cyan-500">Log out</button>
+                                <button onClick={handleLogOut} className="px-3 py-2 font-semibold text-white rounded-full bg-blue-500">Log out</button>
                             </Link> */}
 
 
