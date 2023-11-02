@@ -50,7 +50,7 @@ const ManageTraining = () => {
 
     return (
         <div className='custom-scrollbar'>
-            <h1 className='my-4 text-2xl font-semibold text-center lg:text-3xl text-cyan-500'>Selected Training</h1>
+            <h1 className='my-4 text-2xl font-semibold text-center lg:text-3xl text-blue-500'>Selected Training</h1>
             {data.length > 0 ? (
                 <div>
                     <table className="w-full mt-8 border border-collapse">

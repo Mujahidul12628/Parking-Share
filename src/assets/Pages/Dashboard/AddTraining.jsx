@@ -70,7 +70,7 @@ const AddTraining = () => {
     return (
         <div className='w-10/12 mx-auto my-10 rounded-md shadowBack'>
             <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4 px-6 py-4 rounded-md shadow-lg">
-                <div className="col-span-2 text-2xl font-bold text-center text-cyan-500">
+                <div className="col-span-2 text-2xl font-bold text-center text-blue-500">
                     Add a Training Course
                 </div>
 
@@ -81,7 +81,7 @@ const AddTraining = () => {
                         name="className"
                         value={trainingData.className}
                         onChange={handleChange}
-                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-blue-500"
                         required
                     />
                 </label>
@@ -92,7 +92,7 @@ const AddTraining = () => {
                         name="price"
                         value={trainingData.price}
                         onChange={handleChange}
-                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-blue-500"
                         required
                     />
                 </label>
@@ -103,7 +103,7 @@ const AddTraining = () => {
                         name="availableSeats"
                         value={trainingData.availableSeats}
                         onChange={handleChange}
-                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-blue-500"
                         required
                     />
                 </label>
@@ -114,7 +114,7 @@ const AddTraining = () => {
                         name="instructorName"
                         value={trainingData.instructorName}
                         onChange={handleChange}
-                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-blue-500"
                         required
                     />
                 </label>
@@ -124,7 +124,7 @@ const AddTraining = () => {
                         name="instructorJob"
                         value={trainingData.instructorJob}
                         onChange={handleChange}
-                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-blue-500"
                         required
                     >
                         <option value="" disabled>Select Instructor Job</option>
@@ -140,7 +140,7 @@ const AddTraining = () => {
                         name="teacherJoined"
                         value={trainingData.teacherJoined}
                         onChange={handleChange}
-                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-blue-500"
                         required
                     />
                 </label>
@@ -152,7 +152,7 @@ const AddTraining = () => {
                         name="experience"
                         value={trainingData.experience}
                         onChange={handleChange}
-                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-blue-500"
                         required
                     />
                 </label>
@@ -168,7 +168,7 @@ const AddTraining = () => {
                         name="category"
                         value={trainingData.category}
                         onChange={handleChange}
-                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                        className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-blue-500"
                         required
                     >
                         <option value="" disabled >Select Category</option>
@@ -183,7 +183,7 @@ const AddTraining = () => {
                         name="date"
                         value={trainingData.date}
                         onChange={handleChange}
-                        className="w-full p-3 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                        className="w-full p-3 mt-1 border-2 rounded-md shadowInput border-blue-500"
                     />
                 </label>
                 <label className='relative'>
@@ -194,7 +194,7 @@ const AddTraining = () => {
                             type="text"
                             value={course}
                             onChange={(e) => handleCourseChange(index, e.target.value)}
-                            className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-cyan-500"
+                            className="w-full p-2 mt-1 border-2 rounded-md shadowInput border-blue-500"
                             required
                         />
 
@@ -210,7 +210,7 @@ const AddTraining = () => {
                 </label>
 
 
-                <button type="submit" className="col-span-2 p-2 mt-4 text-white rounded-md shadowBack bg-cyan-500">
+                <button type="submit" className="col-span-2 p-2 mt-4 text-white rounded-md shadowBack bg-blue-500">
                     Add Training
                 </button>
             </form>
