@@ -118,8 +118,6 @@ const Home = () => {
                     </div>
                 </div>
 
-
-
             </div>
 
             <h1 className='my-5 text-3xl font-semibold text-center text-blue-500 '>Available Parking</h1>
