@@ -59,7 +59,7 @@ const AddParking = () => {
         console.log(newParking);
 
         // send data to the server
-        fetch('http://localhost:5008/parking', {
+        fetch('https://parking1-phi.vercel.app/parking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -249,7 +249,7 @@ export default AddParking;
 //         console.log(newparking);
 
 //         // send data to the server
-//         fetch('http://localhost:5008/parking', {
+//         fetch('https://parking1-phi.vercel.app/parking', {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json'

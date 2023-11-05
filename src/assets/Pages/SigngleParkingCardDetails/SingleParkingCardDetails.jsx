@@ -28,7 +28,7 @@ const ClassDetails = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5008/parking/${id}`)
+        fetch(`https://parking1-phi.vercel.app/parking/${id}`)
             .then((res) => res.json())
             .then((data) => setParkingDetails(data));
     }, [id]);

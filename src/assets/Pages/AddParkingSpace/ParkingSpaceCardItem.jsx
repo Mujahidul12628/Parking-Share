@@ -50,7 +50,7 @@ const ParkingSpaceCardItem = ({ parking, setParkings, parkings, searchCriteria, 
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5008/parking/${_id}`, {
+                fetch(`https://parking1-phi.vercel.app/parking/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

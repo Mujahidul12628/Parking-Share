@@ -34,7 +34,7 @@
 //         console.log(updatedParking);
 
 //         // send data to the server
-//         fetch(`http://localhost:5008/parking/${_id}`, {
+//         fetch(`https://parking1-phi.vercel.app/parking/${_id}`, {
 //             method: 'PUT',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -167,7 +167,7 @@ const UpdateCoffee = () => {
         console.log(updatedParking);
 
         // send data to the server
-        fetch(`http://localhost:5008/parking/${_id}`, {
+        fetch(`https://parking1-phi.vercel.app/parking/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
