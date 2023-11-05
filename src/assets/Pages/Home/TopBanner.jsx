@@ -24,7 +24,7 @@ const TopBanner = () => {
                             <Search></Search>
                         </div>
 
-                        <button className="max-w-md px-3 py-2 my-5 text-white bg-blue-500 rounded-lg" type="submit">Submit</button>
+                        <button className="max-w-md px-2 py-1 sm:px-3 sm:py-2 my-5 text-white bg-blue-500 rounded-lg" type="submit">Submit</button>
                     </div>
                 </div>
             </div>
