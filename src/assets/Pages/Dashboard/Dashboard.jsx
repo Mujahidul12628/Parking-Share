@@ -141,7 +141,7 @@ const Dashboard = () => {
                     )}
                     {selectedSection === 'manageTraining' && (
                         <>
-                            <ManageTraining></ManageTraining>
+                            <h1>Manage Training</h1>
                         </>
                     )}
                     {selectedSection === 'enrollment' && (

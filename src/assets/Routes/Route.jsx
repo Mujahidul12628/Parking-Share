@@ -50,10 +50,11 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddParking></AddParking> </PrivateRoute>
             },
             {
-                path: '/details',
+                path: 'details/:id',
                 element: <PrivateRoute> <SingleParkingCardDetails></SingleParkingCardDetails> </PrivateRoute>,
-
+                loader: ({ params }) => fetch(`http://localhost:5008/parking/${params.id}`)
             },
+
             {
                 path: 'updateparking/:id',
                 element: <PrivateRoute><UpdateParkingSpacee></UpdateParkingSpacee></PrivateRoute>,
