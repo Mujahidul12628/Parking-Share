@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBl21ExGj_ad9XSfqrtPvIwgNvTS1l6J3Q",
-    authDomain: "virtual-academy-93114.firebaseapp.com",
-    projectId: "virtual-academy-93114",
-    storageBucket: "virtual-academy-93114.appspot.com",
-    messagingSenderId: "453167431184",
-    appId: "1:453167431184:web:cac0df800e5350023c5495"
+    apiKey: "AIzaSyBXP1xvvtI5wpGdKq5dMctlRZjmLQXmH-s",
+    authDomain: "parking-sharing-89ed9.firebaseapp.com",
+    projectId: "parking-sharing-89ed9",
+    storageBucket: "parking-sharing-89ed9.appspot.com",
+    messagingSenderId: "541630109143",
+    appId: "1:541630109143:web:2946b6786fb974f63f6792"
 };
 
 // Initialize Firebase

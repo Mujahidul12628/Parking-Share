@@ -71,48 +71,50 @@ const Home = () => {
             <div className="flex flex-col justify-between my-3 sm:flex-row item-center">
 
 
-                <div className='bg-blue-50 w-full py-16 flex justify-evenly items-center mx-auto space-x-4'>
-                    <div className="">
-                        <Select
-                            options={categoryOptions}
-                            value={categoryOptions.find(option => option.value === searchCriteria.vehicleCategory)}
-                            onChange={(selectedOption) =>
-                                setSearchCriteria({
-                                    ...searchCriteria,
-                                    vehicleCategory: selectedOption ? selectedOption.value : "",
-                                })
-                            }
-                            placeholder="Select Vehicle Category"
-                            className="w-full border-2 border-blue-400 rounded-md"
-                        />
-                    </div>
-                    <div className="">
-                        <input
-                            type="text"
-                            placeholder="Search Location"
-                            value={searchCriteria.location}
-                            onChange={(e) =>
-                                setSearchCriteria({
-                                    ...searchCriteria,
-                                    location: e.target.value,
-                                })
-                            }
-                            className="w-full p-2 border-2 border-blue-400 rounded-md"
-                        />
-                    </div>
-                    <div className="">
-                        <DatePicker
-                            selected={searchCriteria.startingDate ? new Date(searchCriteria.startingDate) : null}
-                            onChange={(date) =>
-                                setSearchCriteria({
-                                    ...searchCriteria,
-                                    startingDate: date ? date.toISOString() : "",
-                                })
-                            }
-                            placeholderText="Select Starting Date"
-                            dateFormat="yyyy-MM-dd"
-                            className="w-full p-2 border-2 border-blue-400 rounded-md"
-                        />
+                <div className='w-full hidden md:block'>
+                    <div className=' bg-blue-50 w-full py-16 flex justify-evenly items-center mx-auto space-x-4'>
+                        <div className="">
+                            <Select
+                                options={categoryOptions}
+                                value={categoryOptions.find(option => option.value === searchCriteria.vehicleCategory)}
+                                onChange={(selectedOption) =>
+                                    setSearchCriteria({
+                                        ...searchCriteria,
+                                        vehicleCategory: selectedOption ? selectedOption.value : "",
+                                    })
+                                }
+                                placeholder="Select Vehicle Category"
+                                className="w-full border-2 border-blue-400 rounded-md"
+                            />
+                        </div>
+                        <div className="">
+                            <input
+                                type="text"
+                                placeholder="Search Location"
+                                value={searchCriteria.location}
+                                onChange={(e) =>
+                                    setSearchCriteria({
+                                        ...searchCriteria,
+                                        location: e.target.value,
+                                    })
+                                }
+                                className="w-full p-2 border-2 border-blue-400 rounded-md"
+                            />
+                        </div>
+                        <div className="">
+                            <DatePicker
+                                selected={searchCriteria.startingDate ? new Date(searchCriteria.startingDate) : null}
+                                onChange={(date) =>
+                                    setSearchCriteria({
+                                        ...searchCriteria,
+                                        startingDate: date ? date.toISOString() : "",
+                                    })
+                                }
+                                placeholderText="Select Starting Date"
+                                dateFormat="yyyy-MM-dd"
+                                className="w-full p-2 border-2 border-blue-400 rounded-md"
+                            />
+                        </div>
                     </div>
                 </div>
 
