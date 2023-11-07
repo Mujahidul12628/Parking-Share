@@ -18,6 +18,8 @@ import UpdateParkingSpacee from "../Pages/UpdateParkingSpace/UpdateParkingSpacee
 import ShowParkingCard from "../Pages/AddParkingSpace/ShowParkingCard";
 import AddParking from "../Pages/AddParkingSpace/AddParking";
 import SingleParkingCardDetails from "../Pages/SigngleParkingCardDetails/SingleParkingCardDetails";
+import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
+import PAymentFailed from "../Pages/Payment/PAymentFailed";
 
 
 
@@ -41,8 +43,12 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/payment',
-                element: <PrivateRoute><Payment></Payment></PrivateRoute>
+                path: 'payment/success/:transaction_ID',
+                element: <PrivateRoute> <PaymentSuccess></PaymentSuccess> </PrivateRoute>
+            },
+            {
+                path: 'payment/failed/:transaction_ID',
+                element: <PrivateRoute> <PAymentFailed></PAymentFailed> </PrivateRoute>
             },
 
             {
