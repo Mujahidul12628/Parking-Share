@@ -13,14 +13,7 @@ import { BsArrowRight, BsArrowRightCircle } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
 import { useState } from "react";
 
-
-
-
-
-
-
-
-const ParkingSpaceCardItem = ({ parking, setParkings, parkings, searchCriteria, seeAll }) => {
+const ParkingSpaceCardItem = ({ parking, setParkings, parkings, searchCriteria }) => {
 
     const categoryImages = {
         bike: 'https://i.ibb.co/Bsrwrr4/bike.png',
@@ -50,7 +43,7 @@ const ParkingSpaceCardItem = ({ parking, setParkings, parkings, searchCriteria, 
             if (result.isConfirmed) {
 
 
-                fetch(`https://parking1-phi.vercel.app/parking/${_id}`, {
+                fetch(`http://localhost:5000/parking/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -72,25 +65,15 @@ const ParkingSpaceCardItem = ({ parking, setParkings, parkings, searchCriteria, 
     }
 
     const startingDateTime = new Date(startingTime);
-    const endDateTime = new Date(endTime);
-
-    // const matchesSearchCriteria =
-    //     parking.vehicleCategory.toLowerCase().includes(searchCriteria.vehicleCategory.toLowerCase()) &&
-    //     parking.location.toLowerCase().includes(searchCriteria.location.toLowerCase()) &&
-    //     startingDateTime.toLocaleDateString().includes(searchCriteria.startingDate.toLowerCase());
-
-    // if (!matchesSearchCriteria) {
-    //     return null;
-    // }
+    const endDateTime = new Date(endTime)
 
     const matchesSearchCriteria =
-        parking.vehicleCategory.toLowerCase().includes(searchCriteria.vehicleCategory.toLowerCase()) &&
-        parking.location.toLowerCase().includes(searchCriteria.location.toLowerCase()) &&
-        startingDateTime.toLocaleDateString().includes(searchCriteria.startingDate.toLowerCase());
+        parking.vehicleCategory?.toLowerCase().includes(searchCriteria.vehicleCategory?.toLowerCase()) &&
+        parking.location?.toLowerCase().includes(searchCriteria.location?.toLowerCase()) &&
+        startingDateTime.toLocaleDateString().includes(searchCriteria.startingDate?.toLowerCase());
 
-    if (!matchesSearchCriteria || (!seeAll && parkings.indexOf(parking) >= 6)) {
-        return null;
-    } else if (seeAll && parkings.findIndex(p => p._id === parking._id) >= parkings.length) {
+
+    if (!matchesSearchCriteria) {
         return null;
     }
 

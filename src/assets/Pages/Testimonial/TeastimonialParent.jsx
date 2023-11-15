@@ -28,7 +28,7 @@ const TeastimonialParent = () => {
         },
         {
             "name": "Yeasin Tareq",
-            "userImg": "https://i.ibb.co/GvxQS7D/user4.png",
+            "userImg": "https://i.ibb.co/r2YXfRJ/user5.png",
             "userText": "Love the convenience of this app. No issues. Excellent user interface, seamless parking experience. Go-to app for hassle-free parking.",
             "review": 4.7,
             "Time": "5 Days ago",
@@ -42,7 +42,7 @@ const TeastimonialParent = () => {
         },
         {
             "name": "Nayem Uddin",
-            "userImg": "https://i.ibb.co/r2YXfRJ/user5.png",
+            "userImg": "https://i.ibb.co/GvxQS7D/user4.png",
             "userText": "Helped me find parking in busy areas. Very user-friendly app. Efficient in locating parking spaces. Easy to use, essential tool for me.",
             "review": 4.5,
             "Time": "1 Week ago",

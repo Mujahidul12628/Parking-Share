@@ -9,8 +9,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import AddParking from '../AddParkingSpace/AddParking';
 import { IoCreate } from 'react-icons/io5';
-import Testimonial from './Testimonial';
 import TeastimonialParent from '../Testimonial/TeastimonialParent';
+import HowItWorks from './HowItWorks';
 
 const Home = () => {
     const loadedparkings = useLoaderData();
@@ -178,7 +178,7 @@ const Home = () => {
             </div>
 
             <TeastimonialParent></TeastimonialParent>
-
+            <HowItWorks></HowItWorks>
         </div>
     );
 };

@@ -13,9 +13,7 @@ import Home from "../Pages/Home/Home";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 
-import Payment from "../Pages/Payment/Payment";
 import UpdateParkingSpacee from "../Pages/UpdateParkingSpace/UpdateParkingSpacee";
-import ShowParkingCard from "../Pages/AddParkingSpace/ShowParkingCard";
 import AddParking from "../Pages/AddParkingSpace/AddParking";
 import SingleParkingCardDetails from "../Pages/SigngleParkingCardDetails/SingleParkingCardDetails";
 import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
@@ -32,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('https://parking1-phi.vercel.app/parking')
+                loader: () => fetch('http://localhost:5000/parking')
             },
             {
                 path: "login",
@@ -58,31 +56,14 @@ const router = createBrowserRouter([
             {
                 path: 'details/:id',
                 element: <PrivateRoute> <SingleParkingCardDetails></SingleParkingCardDetails> </PrivateRoute>,
-                loader: ({ params }) => fetch(`https://parking1-phi.vercel.app/parking/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/parking/${params.id}`)
             },
-
             {
                 path: 'updateparking/:id',
                 element: <PrivateRoute><UpdateParkingSpacee></UpdateParkingSpacee></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://parking1-phi.vercel.app/parking/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/parking/${params.id}`)
             },
 
-
-            // {
-            //     path: "all-toys",
-            //     element: <AllToys></AllToys>,
-            //     loader: () => fetch('https://action-avenue-server.vercel.app/class')
-            // },
-
-            // {
-            //     path: "add-toys",
-            //     element: <PrivateRoutes><AddAToy></AddAToy></PrivateRoutes>
-            // },
-            // {
-            //     path: "/view-details/:id",
-            //     element: <PrivateRoutes> <ViewDetails></ViewDetails></PrivateRoutes>,
-            //     loader: ({ params }) => fetch(`https://action-avenue-server.vercel.app/toy/${params.id}`)
-            // }
         ]
     },
     {
