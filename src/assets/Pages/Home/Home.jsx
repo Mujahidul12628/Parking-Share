@@ -85,6 +85,7 @@ const Home = () => {
     return (
         <div className='mx-auto max-w-7xl'>
             <TopBanner></TopBanner>
+            <HowItWorks></HowItWorks>
             <div className="flex flex-col justify-between my-3 sm:flex-row item-center">
                 <div className='hidden w-full md:block'>
                     <div className='flex items-center w-full py-16 mx-auto space-x-4 bg-blue-50 justify-evenly'>
@@ -178,7 +179,7 @@ const Home = () => {
             </div>
 
             <TeastimonialParent></TeastimonialParent>
-            <HowItWorks></HowItWorks>
+
         </div>
     );
 };
