@@ -23,14 +23,14 @@ const TeastimonialParent = () => {
             "userImg": "https://i.ibb.co/GvxQS7D/user4.png",
 
             "userText": "Great experience with this parking app. Found a spot quickly! easy navigation. Convenient for daily parking needs. Highly satisfied!",
-            "review": 4,
+            "review": 5,
             "Time": "4 Days ago",
         },
         {
             "name": "Yeasin Tareq",
             "userImg": "https://i.ibb.co/r2YXfRJ/user5.png",
             "userText": "Love the convenience of this app. No issues. Excellent user interface, seamless parking experience. Go-to app for hassle-free parking.",
-            "review": 4.7,
+            "review": 4.9,
             "Time": "5 Days ago",
         },
         {
