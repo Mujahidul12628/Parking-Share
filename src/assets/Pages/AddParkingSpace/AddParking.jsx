@@ -31,7 +31,7 @@ const AddParking = () => {
         const rates = form.rates.value;
         const startingTime = form.startingTime.value;
         const endTime = form.endTime.value;
-        console.log('Form Data:', name, vehicleCategory, location, contactInformation, reservationStatus, rates, startingTime, endTime);
+
         if (!name || !vehicleCategory || !location || !contactInformation || !reservationStatus || !rates || !startingTime || !endTime) {
             Swal.fire({
                 title: 'Error!',
@@ -83,131 +83,129 @@ const AddParking = () => {
     };
 
     return (
-        <div className='mx-auto my-5 max-w-7xl'>
-            <div className="p-5 pb-8 mx-auto bg-blue-50">
-                <h2 className="mb-5 text-3xl font-semibold text-center">Add a parking</h2>
-                <form onSubmit={handleAddParking} className="grid grid-cols-2 gap-2">
-                    {/* Parking Name */}
+        <div className="w-9/12 p-5 pb-8 mx-auto bg-blue-50">
+            <h2 className="mb-5 text-3xl font-semibold text-center">Add a parking</h2>
+            <form onSubmit={handleAddParking} className="grid grid-cols-2 gap-2">
+                {/* Parking Name */}
+                <div className="mb-2">
+                    <label className="label">
+                        <span className="label-text">Service Provider Name</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="text" name="name" placeholder="Parking Name" className="w-full input input-bordered" />
+                    </label>
+                </div>
+
+                {/* Vehicle Category */}
+                <div className="mb-2">
+                    <label className="label">
+                        <span className="label-text">Vehicle Category</span>
+                    </label>
+                    <label className="input-group">
+                        <select
+                            name="vehicleCategory"
+                            value={selectedCategory}
+                            onChange={handleCategoryChange}
+                            className="w-full input input-bordered"
+                        >
+                            <option value="">Select Vehicle Category</option>
+                            <option value="bike">Bike</option>
+                            <option value="car">Car</option>
+                            <option value="Van">Van</option>
+                            <option value="Bus">Bus</option>
+                            <option value="Pickup">Pickup</option>
+                            <option value="Truck">Truck</option>
+                        </select>
+                    </label>
+                </div>
+
+                {/* Image */}
+                {selectedCategory && (
                     <div className="mb-2">
                         <label className="label">
-                            <span className="label-text">Service Provider Name</span>
+                            <span className="label-text">Image</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="name" placeholder="Parking Name" className="w-full input input-bordered" />
+                            {/* Display the selected category's image dynamically */}
+                            <img
+                                src={categoryImages[selectedCategory]}
+                                alt={`${selectedCategory} image`}
+                                className="w-full"
+
+                            />
                         </label>
                     </div>
+                )}
 
-                    {/* Vehicle Category */}
-                    <div className="mb-2">
-                        <label className="label">
-                            <span className="label-text">Vehicle Category</span>
-                        </label>
-                        <label className="input-group">
-                            <select
-                                name="vehicleCategory"
-                                value={selectedCategory}
-                                onChange={handleCategoryChange}
-                                className="w-full input input-bordered"
-                            >
-                                <option value="">Select Vehicle Category</option>
-                                <option value="bike">Bike</option>
-                                <option value="car">Car</option>
-                                <option value="Van">Van</option>
-                                <option value="Bus">Bus</option>
-                                <option value="Pickup">Pickup</option>
-                                <option value="Truck">Truck</option>
-                            </select>
-                        </label>
-                    </div>
+                {/* Location */}
+                <div className="mb-2">
+                    <label className="label">
+                        <span className="label-text">Location</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="text" name="location" placeholder="Location" className="w-full input input-bordered" />
+                    </label>
+                </div>
 
-                    {/* Image */}
-                    {selectedCategory && (
-                        <div className="mb-2">
-                            <label className="label">
-                                <span className="label-text">Image</span>
-                            </label>
-                            <label className="input-group">
-                                {/* Display the selected category's image dynamically */}
-                                <img
-                                    src={categoryImages[selectedCategory]}
-                                    alt={`${selectedCategory} image`}
-                                    className="w-full"
+                {/* Contact Information */}
+                <div className="mb-2">
+                    <label className="label">
+                        <span className="label-text">Contact Information</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="text" name="contactInformation" placeholder="Contact Information" className="w-full input input-bordered" />
+                    </label>
+                </div>
 
-                                />
-                            </label>
-                        </div>
-                    )}
+                {/* Reservation Status */}
+                <div className="mb-2">
+                    <label className="label">
+                        <span className="label-text">Reservation Status</span>
+                    </label>
+                    <label className="input-group">
+                        <select
+                            name="reservationStatus"
+                            className="w-full input input-bordered"
+                        >
+                            <option value="open">Open</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </label>
+                </div>
 
-                    {/* Location */}
-                    <div className="mb-2">
-                        <label className="label">
-                            <span className="label-text">Location</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="location" placeholder="Location" className="w-full input input-bordered" />
-                        </label>
-                    </div>
+                {/* Rates */}
+                <div className="mb-2">
+                    <label className="label">
+                        <span className="label-text">Rates</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="text" name="rates" placeholder="Rates" className="w-full input input-bordered" />
+                    </label>
+                </div>
 
-                    {/* Contact Information */}
-                    <div className="mb-2">
-                        <label className="label">
-                            <span className="label-text">Contact Information</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="contactInformation" placeholder="Contact Information" className="w-full input input-bordered" />
-                        </label>
-                    </div>
+                {/* Starting Time */}
+                <div className="mb-2">
+                    <label className="label">
+                        <span className="label-text">Starting Date and Time</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="datetime-local" name="startingTime" className="w-full input input-bordered" />
+                    </label>
+                </div>
 
-                    {/* Reservation Status */}
-                    <div className="mb-2">
-                        <label className="label">
-                            <span className="label-text">Reservation Status</span>
-                        </label>
-                        <label className="input-group">
-                            <select
-                                name="reservationStatus"
-                                className="w-full input input-bordered"
-                            >
-                                <option value="open">Open</option>
-                                <option value="closed">Closed</option>
-                            </select>
-                        </label>
-                    </div>
+                {/* End Time */}
+                <div className="mb-2">
+                    <label className="label">
+                        <span className="label-text">End Time</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="datetime-local" name="endTime" className="w-full input input-bordered" />
+                    </label>
+                </div>
 
-                    {/* Rates */}
-                    <div className="mb-2">
-                        <label className="label">
-                            <span className="label-text">Rates</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="rates" placeholder="Rates" className="w-full input input-bordered" />
-                        </label>
-                    </div>
-
-                    {/* Starting Time */}
-                    <div className="mb-2">
-                        <label className="label">
-                            <span className="label-text">Starting Date and Time</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="datetime-local" name="startingTime" className="w-full input input-bordered" />
-                        </label>
-                    </div>
-
-                    {/* End Time */}
-                    <div className="mb-2">
-                        <label className="label">
-                            <span className="label-text">End Time</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="datetime-local" name="endTime" className="w-full input input-bordered" />
-                        </label>
-                    </div>
-
-                    {/* Submit Button */}
-                    <input type="submit" value="Add Parking" className="col-span-2 py-2 mt-5 font-semibold text-white bg-blue-400 border-2 border-blue-400 rounded-md hover:bg-transparent hover:text-blue-500" />
-                </form>
-            </div>
+                {/* Submit Button */}
+                <input type="submit" value="Add Parking" className="col-span-2 py-2 mt-5 font-semibold text-white bg-blue-400 border-2 border-blue-400 rounded-md hover:bg-transparent hover:text-blue-500" />
+            </form>
         </div>
     );
 };

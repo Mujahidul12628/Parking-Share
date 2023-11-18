@@ -29,7 +29,7 @@ const Navbar = () => {
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="text-white w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="p-2 mt-3 bg-white shadow menu menu-compact dropdown-content rounded-box w-52">
                             <li className=''><NavLink to="/">Home</NavLink></li>
@@ -41,9 +41,9 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    <div className='ml-2 lg:ml-0 inline-flex items-center'>
-                        <img src={logo} className='w-2/12 sm:w-1/12 mr-1' alt="" />
-                        <p className='md:text-xl md:text-2xl lg:text-3xl font-semibold text-white tex-white'> Share Parking</p>
+                    <div className='inline-flex items-center ml-2 lg:ml-0'>
+                        <img src={logo} className='w-2/12 mr-1 sm:w-1/12' alt="" />
+                        <p className='font-semibold text-white md:text-xl md:text-2xl lg:text-3xl tex-white'> Share Parking</p>
                     </div>
 
                 </div>
@@ -77,14 +77,14 @@ const Navbar = () => {
 
                             <Link to="/">
 
-                                <button onClick={handleLogOut} className=" sm:px-3 sm:py-2 font-semibold text-white rounded-full bg-slate-700">Log out</button>
+                                <button onClick={handleLogOut} className="font-semibold text-white rounded-full  sm:px-3 sm:py-2 bg-slate-700">Log out</button>
 
                             </Link>
                         </div>
                         :
                         <Link to="/login">
 
-                            <button className="px-2 p-1 sm:px-3 sm:py-2  font-semibold text-white rounded-full bg-slate-700">Login</button>
+                            <button className="p-1 px-2 font-semibold text-white rounded-full sm:px-3 sm:py-2 bg-slate-700">Login</button>
 
                         </Link>}
                 </div>
