@@ -14,7 +14,7 @@ const TeastimonialParent = () => {
         {
             "name": "Yousuf Rahman",
             "userImg": "https://i.ibb.co/3Ntp4DJ/user2.png",
-            "userText": "Efficient and reliable parking service. Highly recommended! App's features stand out.Using it for a long time. Great job!",
+            "userText": "Efficient and reliable parking service. Highly recommended! App's features stand out.Using it for a long time. Great job !",
             "review": 4,
             "Time": "2 Days ago",
         },

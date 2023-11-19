@@ -192,7 +192,7 @@ const SingleParkingCardDetails = () => {
                                 </div>
 
                                 {/* Link to Payment Page */}
-                                <Link to={`/payment`}>
+                                <Link to="https://sandbox.sslcommerz.com/EasyCheckOut/testcdefca6f04d702a1d3fc4cfb33af7f7d631">
                                     <button className='flex items-center justify-center w-full py-1 mt-5 font-semibold text-white bg-blue-400 rounded-md'>
                                         <span >Payment Now</span> <RxEnter className='pl-3' size={28}></RxEnter>
                                     </button>
@@ -214,10 +214,10 @@ const SingleParkingCardDetails = () => {
             ..............................
             ..............................
             .............................. */}
-            <div className="w-9/12 p-5 pb-8 mx-auto bg-blue-50">
+            {/* <div className="w-9/12 p-5 pb-8 mx-auto bg-blue-50">
                 <h2 className="mb-5 text-3xl font-semibold text-center">Add a parking</h2>
                 <form onSubmit={handleAddParking} className="grid grid-cols-2 gap-2">
-                    {/* Parking Name */}
+                    
                     <div className="mb-2">
                         <label className="label">
                             <span className="label-text">Service Provider Name</span>
@@ -257,7 +257,7 @@ const SingleParkingCardDetails = () => {
                         </label>
                     </div>
 
-                    {/* Contact Information */}
+           
                     <div className="mb-2">
                         <label className="label">
                             <span className="label-text">Contact Information</span>
@@ -267,11 +267,10 @@ const SingleParkingCardDetails = () => {
                         </label>
                     </div>
 
-                    {/* Submit Button */}
+                 
                     <input type="submit" value="Add Parking" className="col-span-2 py-2 mt-5 font-semibold text-white bg-blue-400 border-2 border-blue-400 rounded-md hover:bg-transparent hover:text-blue-500" />
                 </form>
-            </div>
-
+            </div> */}
         </div>
     );
 };

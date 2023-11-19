@@ -78,7 +78,7 @@ const ParkingSpaceCardItem = ({ parking, setParkings, parkings, searchCriteria }
     }
 
     return (
-        <div>
+        <div >
             <div className="mx-auto border border-blue-200 shadow-xl sm:w-full bg-base-100">
                 <figure><img src={imageUrl} alt={`${vehicleCategory} image`} className="w-full bg-blue-50" /></figure>
                 <div className="p-4 card-body">

@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import TopBanner from './TopBanner';
 import { IoIosSearch } from 'react-icons/io';
 import { Link, useLoaderData } from 'react-router-dom';
@@ -11,10 +11,38 @@ import AddParking from '../AddParkingSpace/AddParking';
 import { IoCreate } from 'react-icons/io5';
 import TeastimonialParent from '../Testimonial/TeastimonialParent';
 import HowItWorks from './HowItWorks';
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Home = () => {
     const loadedparkings = useLoaderData();
     const [parkings, setParkings] = useState(loadedparkings);
+    const [displayParkings, setDisplayParkings] = useState([]);
+
+    const targetElementRef = useRef(null);
+
+    const setTargetElement = () => {
+        return targetElementRef.current;
+    };
+
+    const scrollToElement = () => {
+        if (targetElementRef.current) {
+            targetElementRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    useEffect(() => {
+        if (parkings.length > 6) {
+            setDisplayParkings(parkings.slice(0, 6));
+        }
+    }, [parkings]);
+
+    const handleDisplayParkings = () => {
+        if (displayParkings.length > 6) {
+            setDisplayParkings(parkings.slice(0, 6));
+        } else {
+            setDisplayParkings(parkings);
+        }
+    };
 
     const [searchCriteria, setSearchCriteria] = useState({
         vehicleCategory: '',
@@ -31,31 +59,6 @@ const Home = () => {
         { value: 'truck', label: 'Truck' },
         { value: 'pickup', label: 'Pickup' },
     ];
-
-    // const handleSearch = () => {
-    //     const filteredParkings = loadedparkings.filter((parking) => {
-    //         const categoryMatch =
-    //             parking.vehicleCategory
-    //                 .toLowerCase()
-    //                 .includes(searchCriteria.vehicleCategory.toLowerCase()) ||
-    //             searchCriteria.vehicleCategory === '';
-
-    //         const locationMatch =
-    //             parking.location
-    //                 .toLowerCase()
-    //                 .includes(searchCriteria.location.toLowerCase()) ||
-    //             searchCriteria.location === '';
-
-    //         const startingDateMatch =
-    //             parking.startingTime
-    //                 .toLowerCase()
-    //                 .includes(searchCriteria.startingDate.toLowerCase()) ||
-    //             searchCriteria.startingDate === '';
-
-    //         return categoryMatch && locationMatch && startingDateMatch;
-    //     });
-    //     setParkings(filteredParkings);
-    // };
 
     const handleSearch = () => {
         console.log("Search Criteria:", searchCriteria);
@@ -84,26 +87,13 @@ const Home = () => {
 
     return (
         <div className='mx-auto max-w-7xl'>
-            <TopBanner></TopBanner>
+            <TopBanner setTargetElement={setTargetElement} scrollToElement={scrollToElement} />
             <HowItWorks></HowItWorks>
             <div className="flex flex-col justify-between my-3 sm:flex-row item-center">
                 <div className='hidden w-full md:block'>
                     <div className='flex items-center w-full py-16 mx-auto space-x-4 bg-blue-50 justify-evenly'>
                         <div className=''>
-                            {/* <Select
-                                options={categoryOptions}
-                                value={categoryOptions.find(
-                                    (option) => option.value === searchCriteria.vehicleCategory
-                                )}
-                                onChange={(selectedOption) =>
-                                    setSearchCriteria({
-                                        ...searchCriteria,
-                                        vehicleCategory: selectedOption ? selectedOption.value : '',
-                                    })
-                                }
-                                placeholder='Select Vehicle Category'
-                                className='w-full border-2 border-blue-400 rounded-md'
-                            /> */}
+
                             <Select
                                 options={categoryOptions}
                                 value={categoryOptions.find(
@@ -158,7 +148,7 @@ const Home = () => {
             <h1 className='my-5 text-3xl font-semibold text-center text-blue-500 '>
                 Available Parking
             </h1>
-            <div className='p-2'>
+            <div ref={targetElementRef} id="targetElement" className='p-2'>
                 <Link to='/addparking'>
                     <button className='flex items-center px-4 py-2 mt-3 font-semibold text-white bg-blue-400 rounded '>
                         Create New Parking<IoCreate className='w-6 h-6 ml-2 font-semibold text-white' />{' '}
@@ -166,7 +156,7 @@ const Home = () => {
                 </Link>
             </div>
 
-            <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
+            {/* <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
                 {parkings.map((parking) => (
                     <ParkingSpaceCardItem
                         key={parking._id}
@@ -176,8 +166,34 @@ const Home = () => {
                         searchCriteria={searchCriteria}
                     ></ParkingSpaceCardItem>
                 ))}
+            </div> */}
+            <div id="bookingReservation" className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+                {/* Display parking spaces based on the state */}
+                {displayParkings.map((parking) => (
+                    <ParkingSpaceCardItem
+                        key={parking._id}
+                        parking={parking}
+                        parkings={parkings}
+                        setParkings={setParkings}
+                        searchCriteria={searchCriteria}
+                    />
+                ))}
             </div>
-
+            <div className="mt-4 text-center">
+                <button
+                    onClick={handleDisplayParkings}
+                    className="p-1 px-5 text-blue-500 rounded-full border border-blue-400 "
+                >
+                    {displayParkings.length > 6 ?
+                        <div className='flex items-center justify-center flex-col'>
+                            <span>Show less</span> <FaChevronUp />
+                        </div> :
+                        <div className='flex items-center justify-center flex-col'>
+                            <span className='font-semibold'>Show All</span>
+                            <FaChevronDown />
+                        </div>}
+                </button>
+            </div>
             <TeastimonialParent></TeastimonialParent>
 
         </div>
