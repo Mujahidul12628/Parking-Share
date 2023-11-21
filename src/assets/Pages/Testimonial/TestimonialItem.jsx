@@ -82,7 +82,7 @@ const TestimonialItem = ({ testimonials }) => {
                                     <span className="ml-2">{testimonial.review}</span>
                                 </div>
                             </div>
-                            <p className="text-justify text-gray-600">{testimonial.userText}</p>
+                            <p className="text-justify text-gray-600 xl:text-center">{testimonial.userText}</p>
                             <div className='flex items-center justify-center mt-4 mb-2'>
                                 <span className='mx-1'> <FaRegClock size={20} /> </span>
                                 <span className=''>{testimonial.Time}</span>

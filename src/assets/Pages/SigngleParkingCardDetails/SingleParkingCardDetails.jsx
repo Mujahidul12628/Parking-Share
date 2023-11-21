@@ -59,7 +59,7 @@ const SingleParkingCardDetails = () => {
         const productId = newParking.id;
         console.log(productId);
 
-        fetch('http://localhost:5000/parking', {
+        fetch('https://parking-sharing-server.vercel.app/parking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -329,7 +329,7 @@ export default SingleParkingCardDetails;
 //         console.log(newParking);
 
 
-//         fetch('http://localhost:5000/parking', {
+//         fetch('https://parking-sharing-server.vercel.app/parking', {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json'

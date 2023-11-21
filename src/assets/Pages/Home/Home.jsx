@@ -14,6 +14,7 @@ import HowItWorks from './HowItWorks';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Home = () => {
+    const [test, setTest] = useState([]);
     const loadedparkings = useLoaderData();
     const [parkings, setParkings] = useState(loadedparkings);
     const [displayParkings, setDisplayParkings] = useState([]);
@@ -31,10 +32,17 @@ const Home = () => {
     };
 
     useEffect(() => {
+        // fetch("https://parking-sharing-server.vercel.app/parking")
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setTest(data)
+        //         console.log(test)
+        //     })
         if (parkings.length > 6) {
             setDisplayParkings(parkings.slice(0, 6));
         }
     }, [parkings]);
+
 
     const handleDisplayParkings = () => {
         if (displayParkings.length > 6) {
@@ -179,7 +187,7 @@ const Home = () => {
                     />
                 ))}
             </div>
-            <div className="mt-4 text-center">
+            {/* <div className="mt-4 text-center">
                 <button
                     onClick={handleDisplayParkings}
                     className="p-1 px-5 text-blue-500 rounded-full border border-blue-400 "
@@ -191,6 +199,21 @@ const Home = () => {
                         <div className='flex items-center justify-center flex-col'>
                             <span className='font-semibold'>Show All</span>
                             <FaChevronDown />
+                        </div>}
+                </button>
+            </div> */}
+            <div className="mt-4 text-center">
+                <button
+                    onClick={handleDisplayParkings}
+                    className="p-1 px-5 text-blue-500 rounded-full border-2 border-blue-400 "
+                >
+                    {displayParkings.length > 6 ?
+                        <div className='flex items-center justify-center flex-col'>
+                            <span>Show less</span>
+                        </div> :
+                        <div className='flex items-center justify-center flex-col'>
+                            <span className='font-semibold'>Show All Parking</span>
+
                         </div>}
                 </button>
             </div>

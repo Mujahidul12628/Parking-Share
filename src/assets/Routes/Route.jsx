@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/parking')
+                loader: () => fetch('https://parking-sharing-server.vercel.app/parking')
             },
             {
                 path: "login",
@@ -55,12 +55,12 @@ const router = createBrowserRouter([
             {
                 path: 'details/:id',
                 element: <PrivateRoute> <SingleParkingCardDetails></SingleParkingCardDetails> </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/parking/${params.id}`)
+                loader: ({ params }) => fetch(`https://parking-sharing-server.vercel.app/parking/${params.id}`)
             },
             {
                 path: 'updateparking/:id',
                 element: <PrivateRoute><UpdateParkingSpacee></UpdateParkingSpacee></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/parking/${params.id}`)
+                loader: ({ params }) => fetch(`https://parking-sharing-server.vercel.app/parking/${params.id}`)
             },
 
         ]
